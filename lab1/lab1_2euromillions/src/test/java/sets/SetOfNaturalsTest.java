@@ -64,6 +64,7 @@ public class SetOfNaturalsTest {
 
     @Test
     public void testIsEmpty() {
+        // tests if the SetOfNaturals is empty if initiliazed with the default constructor
         assertTrue(setA.size()==0);
     }
 }
