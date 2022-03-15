@@ -14,7 +14,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/surefire/surefirebooter5459365950648242268.jar /mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/surefire 2022-03-15T10-54-59_505-jvmRun1 surefire7428887246381468219tmp surefire_05856875846064440856tmp"/>
+    <property name="sun.java.command" value="/mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/surefire/surefirebooter17017772786107236286.jar /mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/surefire 2022-03-15T13-13-29_420-jvmRun1 surefire9296510298823649817tmp surefire_014548103088354918737tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/test-classes:/mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/classes:/home/theo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/theo/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/theo/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:/home/theo/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/theo/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/theo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/surefire/surefirebooter5459365950648242268.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/d/Faculdade/TQS/TQS-96145/lab1/lab1_2euromillions/target/surefire/surefirebooter17017772786107236286.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.10+9-Ubuntu-0ubuntu1.20.04"/>
     <property name="user.name" value="theo"/>

@@ -14,7 +14,7 @@ import java.util.Random;
 public class Dip {
     static final int MAX_RANGE_NUMBERS = 50;
     static final int MAX_RANGE_STARS = 12;
-    static final int MIN_RANGE_STARS = 49;
+    static final int MIN_RANGE_STARS = 1;
     static final int NUMBER_OF_STARS = 2;
     static final int NUMBER_OF_NUMBERS = 5;
 
@@ -31,7 +31,7 @@ public class Dip {
 
         if (NUMBER_OF_NUMBERS == arrayOfNumbers.length && NUMBER_OF_STARS == arrayOfStarts.length) {
             for (int i=0; i<arrayOfStarts.length; i++) {
-                if (arrayOfStarts[i]<MIN_RANGE_STARS || arrayOfStarts[i]>MAX_RANGE_NUMBERS) throw new IllegalArgumentException("star number "+arrayOfStarts[i]+"out of range, expected numbers in range "+MIN_RANGE_STARS+".."+MAX_RANGE_STARS);
+                if (arrayOfStarts[i]<MIN_RANGE_STARS || arrayOfStarts[i]>MAX_RANGE_STARS) throw new IllegalArgumentException("star number "+arrayOfStarts[i]+" out of range, expected numbers in range "+MIN_RANGE_STARS+".."+MAX_RANGE_STARS);
             }
             numbers.add(arrayOfNumbers);
             starts.add(arrayOfStarts);
