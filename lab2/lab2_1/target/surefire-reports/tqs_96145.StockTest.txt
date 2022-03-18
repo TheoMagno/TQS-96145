@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: tqs_96145.StockTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.103 s <<< FAILURE! - in tqs_96145.StockTest
+testTotalValue  Time elapsed: 1.093 s  <<< ERROR!
+java.lang.NullPointerException
+	at tqs_96145.StockTest.testTotalValue(StockTest.java:20)
+
