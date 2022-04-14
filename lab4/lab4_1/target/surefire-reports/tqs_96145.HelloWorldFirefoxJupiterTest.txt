@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: tqs_96145.HelloWorldFirefoxJupiterTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.73 s <<< FAILURE! - in tqs_96145.HelloWorldFirefoxJupiterTest
+test  Time elapsed: 0.224 s  <<< ERROR!
+org.openqa.selenium.WebDriverException: 
+Cannot find firefox binary in PATH. Make sure firefox is installed. OS appears to be: LINUX
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-TBO8P79', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.4.0-19041-Microsoft', java.version: '11.0.10'
+Driver info: driver.version: FirefoxDriver
+	at tqs_96145.HelloWorldFirefoxJupiterTest.setup(HelloWorldChromeJupiterTest.java:30)
+

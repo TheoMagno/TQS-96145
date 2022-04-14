@@ -13,8 +13,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import main.java.tqs5.lab3_2.Car;
-import main.java.tqs5.lab3_2.CarRepository;
+import tqs5.lab3_2.Car;
+import tqs5.lab3_2.CarRepository;
 
 import java.util.List;
 
@@ -53,7 +53,7 @@ public class CarIT {
 
 
        ResponseEntity<List<Car>> response = restTemplate
-               .exchange("/api/employees", HttpMethod.GET, null, new ParameterizedTypeReference<List<Car>>() {
+               .exchange("/cars", HttpMethod.GET, null, new ParameterizedTypeReference<List<Car>>() {
                });
 
        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);

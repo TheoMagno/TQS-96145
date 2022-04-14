@@ -12,9 +12,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.mockito.Mockito;
 
-import main.java.tqs5.lab3_2.Car;
-import main.java.tqs5.lab3_2.CarController;
-import main.java.tqs5.lab3_2.CarManagerService;
+import tqs5.lab3_2.Car;
+import tqs5.lab3_2.CarController;
+import tqs5.lab3_2.CarManagerService;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;

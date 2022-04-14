@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
-import main.java.tqs5.lab3_2.Car;
-import main.java.tqs5.lab3_2.CarRepository;
+import tqs5.lab3_2.Car;
+import tqs5.lab3_2.CarRepository;
 
 import java.util.List;
 

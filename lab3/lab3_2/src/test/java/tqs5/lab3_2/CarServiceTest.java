@@ -9,9 +9,9 @@ import org.mockito.Mockito;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import main.java.tqs5.lab3_2.Car;
-import main.java.tqs5.lab3_2.CarManagerService;
-import main.java.tqs5.lab3_2.CarRepository;
+import tqs5.lab3_2.Car;
+import tqs5.lab3_2.CarManagerService;
+import tqs5.lab3_2.CarRepository;
 
 import java.util.Arrays;
 import java.util.List;
