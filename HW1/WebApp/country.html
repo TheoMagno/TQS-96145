@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COVID Tracker</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="icon" type="image/x-icon" href="https://istss.org/ISTSS_Main/media/Images/Landing%20Page%20Icons/COVID-19.png?ext=.png">
+        <style>
+            /* Add a black background color to the top navigation */
+            .topnav {
+            background-color: black;
+            overflow: hidden;
+            border-radius: 25px;
+            }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+            /* Change the color of links on hover */
+            .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            }
+
+            /* Add a color to the active/current link */
+            .topnav a.active {
+            background-color: #06193E;
+            color: white;
+            }
+
+            body {
+                background-color: #0C2657;
+            }
+
+            .content {
+                background-color: #06193E;
+                margin-top: 50px;
+                margin-left: 50px;
+                margin-right: 50px;
+                padding-top: 5%;
+                padding-bottom: 5%;
+                padding-left: 5%;
+                padding-right: 5%;
+                border-radius: 25px;
+                margin-bottom: 50px;
+            }
+
+            .submit {
+                position: absolute;
+                left: 25%;
+            }
+
+            .countries {
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="index.html">Home</a>
+        </div>
+
+        <div class="content">
+            <h1 class="countries" id="country_name">Country name</h1>
+            <h2 id="country_continent">Continent:</h2>
+            <h3 id="population">Population:</h3>
+            <h3 id="date">Date:</h3>
+            <h4 id="last_update">Last Update:</h4>
+        </div>
+
+        <div class="content">
+            <h1 class="countries">Cases</h2>
+            <h3 id="new_cases">New Cases:</h3>
+            <h3 id="1M_pop_cases">Cases per Million:</h3>
+            <h3 id="active">Active Cases:</h3>
+            <h3 id="critical">Critical Cases:</h3>
+            <h3 id="recovered">Recovered:</h3>
+            <h3 id="total_cases">Total Cases:</h3>
+        </div>
+
+        <div class="content">
+            <h1 class="countries">Deaths</h1>
+            <h3 id="new_deaths">New Deaths:</h3>
+            <h3 id="1M_pop_deaths">Deaths per Million:</h3>
+            <h3 id="total_deaths">Total Deaths:</h3>
+        </div>
+
+        <div class="content">
+            <h1 class="countries">Tests</h1>
+            <h3 id="1M_pop_tests">Tests per Million:</h3>
+            <h3 id="total_tests">Total Tests:</h3>
+        </div>
+        
+    </body>
+    <script>
+         $(document).ready(function () {
+            const country = new URLSearchParams(window.location.search).get('country');
+            $.ajax({
+                url: 'http://localhost:8080/api/statistics/'+country,
+                beforeSend: function(xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer 6QXNMEMFHNY4FJ5ELNFMP5KRW52WFXN5")
+            }, success: function(array){
+                const response = JSON.parse(array);
+                document.getElementById('country_name').innerText = response.response[0].country;
+                document.getElementById('country_continent').innerText = 'Continent: '+response.response[0].continent;
+                document.getElementById('date').innerText = 'Date: '+response.response[0].day;
+                document.getElementById('population').innerText = 'Population: '+response.response[0].population;
+                document.getElementById('last_update').innerHTML = 'Last Update: '+response.response[0].time;
+                var cases = new Map(Object.entries(response.response[0].cases));
+                document.getElementById('new_cases').innerText = 'New Cases: '+cases.get('new');
+                document.getElementById('1M_pop_cases').innerText = 'Cases per Million: '+cases.get('1M_pop');
+                document.getElementById('active').innerText = 'Active Cases: '+cases.get('active');
+                document.getElementById('critical').innerText = 'Critical Cases: '+cases.get('critical');
+                document.getElementById('total_cases').innerText = 'Total Cases: '+cases.get('total');
+                document.getElementById('recovered').innerText = 'Recovered: '+cases.get('recovered');
+                var deaths = new Map(Object.entries(response.response[0].deaths));
+                document.getElementById('new_deaths').innerText = 'New Deaths: '+deaths.get('new');
+                document.getElementById('1M_pop_deaths').innerText = 'Deaths per Million: '+deaths.get('1M_pop');
+                document.getElementById('total_deaths').innerText = 'Total Deaths: '+deaths.get('total');
+                var tests = new Map(Object.entries(response.response[0].tests));
+                document.getElementById('1M_pop_tests').innerText = 'Tests per Million: '+tests.get('1M_pop');
+                document.getElementById('total_tests').innerText = 'Total Tests: '+tests.get('total');
+                document.body.innerHTML
+                    = document.body.innerHTML
+                    .replaceAll("null", "0");
+                }
+            });
+        });
+    </script>
+</html>
