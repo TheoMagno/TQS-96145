@@ -29,9 +29,9 @@ public class AppService {
 
     public String getCountryStats(String country) throws IOException, InterruptedException {
 		String stored = cache.checkCache(country);
-		logger.info("Checking cache for "+country+"...");
+		logger.info("Checking cache for {}...", country);
 		if (stored.equals("")) {
-			logger.info("Information about "+country+" not found in the cache. Checking API...");
+			logger.info("Information about {} not found in the cache. Checking API...", country);
 			String response = api.getCountryStats(country);
 			ArrayList<String> list = new ArrayList<>();
 			list.add(response);
@@ -40,7 +40,7 @@ public class AppService {
 			logger.info(response);
 			return response;
 		}
-		logger.info("Information about "+country+" found in the cache.");
+		logger.info("Information about {} found in the cache.", country);
 		logger.info(stored);
 		return stored;
 	}
