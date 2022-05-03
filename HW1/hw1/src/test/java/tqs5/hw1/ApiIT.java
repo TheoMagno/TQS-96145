@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package tqs5.hw1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,7 @@ class ApiIT {
     @Autowired
     private MockMvc mvc;
 
-    @Autowired
-    private API api;
+    private API api = new API();
 
     @Test
     void when_getAllCountries() throws Exception {
@@ -41,7 +40,7 @@ class ApiIT {
     @Test
     void when_getBrazilStats() throws Exception {
         mvc.perform(get("/api/country/Bra").contentType(MediaType.TEXT_PLAIN)).andExpect(status().isOk())
-                .andExpect(jsonPath("$", contains("Brazil")));
+                .andExpect(jsonPath("$[0]", is("Brazil")));
     }
 
 }

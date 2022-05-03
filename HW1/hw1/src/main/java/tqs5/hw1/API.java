@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package tqs5.hw1;
 
 import java.io.IOException;
 import java.net.URI;

@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package tqs5.hw1;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
@@ -16,13 +16,14 @@ public class WebAppSteps {
     private final WebDriver driver = new FirefoxDriver();
     @Given("go to the WebApp home page")
     public void go_to_the_web_app_home_page() {
-        driver.get("file:///D:/Faculdade/TQS/TQS-96145/HW1/WebApp/index.html");
+        driver.get("http://localhost:8080");
     }
     @When("I search for {string}")
     public void search_for(String query) throws InterruptedException {
         WebElement element = driver.findElement(By.id("country"));
         element.sendKeys(query);
         element.submit();
+        TimeUnit.SECONDS.sleep(5);
     }
     @When("click on {string}")
     public void click_on_brazil(String country) {

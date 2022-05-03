@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package tqs5.hw1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +12,9 @@ import java.util.List;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.CoreMatchers.is;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(RestController.class)
 class ControllerTest {
@@ -33,7 +32,7 @@ class ControllerTest {
 
         mvc.perform(get("/api/country").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(3)))
+                .andExpect(jsonPath("$", hasSize(4)))
                 .andExpect(jsonPath("$[0]", is("Argentina")))
                 .andExpect(jsonPath("$[1]", is("Brazil")))
                 .andExpect(jsonPath("$[2]", is("Gibraltar")))
@@ -46,7 +45,7 @@ class ControllerTest {
 
         when(service.getCountries("Bra")).thenReturn(allCountries);
 
-        mvc.perform(get("/api/country").contentType(MediaType.APPLICATION_JSON))
+        mvc.perform(get("/api/country/Bra").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
                 .andExpect(jsonPath("$[0]", is("Brazil")))
@@ -61,7 +60,7 @@ class ControllerTest {
 
         mvc.perform(get("/api/statistics/Brazil").contentType(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", is(result)));
+                .andExpect(content().string(result));
     }
 
     @Test

@@ -1,4 +1,4 @@
-package io.cucumber.skeleton;
+package tqs5.hw1;
 
 import org.junit.platform.suite.api.ConfigurationParameter;
 import org.junit.platform.suite.api.IncludeEngines;
@@ -10,7 +10,7 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("io/cucumber/skeleton")
+@SelectClasspathResource("tqs5/hw1")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "io.cucumber.skeleton")
 public class RunCucumberTest {
